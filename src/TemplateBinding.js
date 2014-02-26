@@ -167,8 +167,8 @@
     (function() {
       var t = document.createElement('template');
       var d = t.content.ownerDocument;
-      var html = d.appendChild(d.createElement('html'));
-      var head = html.appendChild(d.createElement('head'));
+      var html = d.querySelector('html') || d.appendChild(d.createElement('html'));
+      var head = html.querySelector('head') || html.appendChild(d.createElement('head'));
       var base = d.createElement('base');
       base.href = document.baseURI;
       head.appendChild(base);
